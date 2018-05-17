@@ -2,9 +2,9 @@
 {% block content %}
 
 <div style="margin: auto;width: 500px;" >
-    <form method="post" role="form">
+    <form method="post" role="form" class="formulario">
         {% csrf_token %}
-        
+        <h1>Login</h1>
         {% for field in form %}
             <div class="form-group">
                 {{field.label_tag}}<br>
@@ -12,6 +12,7 @@
             </div>
         {% endfor %}
         <button type="submit" class="btn btn-primary">Entrar</button>
+    </form>
 </div>
 
 {% endblock %}

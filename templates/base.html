@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway" rel="stylesheet">
 </head>
 <body>
     <script type="text/javascript">
@@ -35,20 +36,20 @@
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="{% url 'home' %}">Django CRUD</a>
+                <a class="navbar-brand" href="{% url 'home' %}" style="color: white;">Django CRUD</a>
             </div>
             <ul class="nav navbar-nav">
                 {% if user.is_authenticated %}
-                    <li><a href="{% url 'listar_clientes' %}">Clientes cadastrados</a></li>
+                    <li><a href="{% url 'listar_clientes' %}" style="color: white;">Clientes cadastrados</a></li>
                 {% endif %}
                 {% if user.is_authenticated %}
-                    <li><a href="{% url 'novo_cliente' %}">Adicionar cliente</a></li>
+                    <li><a href="{% url 'novo_cliente' %}" style="color: white;">Adicionar cliente</a></li>
                 {% endif %}
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="{% url 'cadastro' %}"><span class="glyphicon glyphicon-user"></span> Cadastre-se</a></li>
-                <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                <li><a href="{% url 'sair' %}"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'sair' %}" style="color: white;"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                {% endif %}
             </ul>
         </div>
     </nav>

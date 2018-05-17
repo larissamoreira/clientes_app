@@ -2,7 +2,7 @@
 {% block content %}
     <h1>Adicionar/Editar cliente</h1>
 
-    <form method="post" role="form">
+    <form method="post" role="form" class="clientes-lista">
         {% csrf_token %}
 
         {% for field in form %}

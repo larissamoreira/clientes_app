@@ -65,7 +65,7 @@ def login(request):
             usuario = authenticate(username=usuario_aux.username, password=form.cleaned_data.get('password'))
             if usuario is not None:
                 auth_login(request, usuario)
-                return redirect('home')
+                return redirect('listar_clientes')
         # else:
         #     return HttpResponse('falhou')
     else:

@@ -1,18 +1,25 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1>Pagina inicial</h1>
+    <div class="main">
+        <h1>Clientes APP</h1>
 
-    {% if user.is_authenticated %}
-        <p>Seja bem vindo(a), {{ user.get_username}}.</p>
-    {% else %}
-        <p>Seja bem vindo(a)! Faça login para visualizar os clientes.</p>
-    {% endif %}
+        {% if user.is_authenticated %}
+            <h4>Seja bem vindo(a), {{ user.get_username}}</h4>
+        {% else %}
+            <h4>Faça login para visualizar os clientes.</h4>
+        {% endif %}
 
-
-    <!-- Botão de entrar no facebook -->
-    <fb:login-button 
-    scope="public_profile,email"
-    onlogin="checkLoginState();">
-    </fb:login-button>
-
+        <ul class="opcoes">
+            <li><a href="{% url 'cadastro' %}"><span class="glyphicon glyphicon-user"></span> Cadastre-se</a></li>
+            <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+ 
+        <!-- Botão de entrar no facebook -->
+        <p>Entre com o facebook</p>
+            <fb:login-button 
+            scope="public_profile,email"
+            onlogin="checkLoginState();">
+            </fb:login-button>
+        
+    </div>
 {% endblock %}
