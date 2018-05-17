@@ -26,3 +26,10 @@ def novo_cliente(request):
     else:
         form = novo_cliente_form()
     return render(request, 'novo_cliente.html', {'form':form})
+
+def cadastro(request):
+    return render(request, 'cadastro.html')
+
+
+def login(request):
+    return render(request, 'login.html')
