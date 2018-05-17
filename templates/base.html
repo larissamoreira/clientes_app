@@ -11,6 +11,27 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
+    <script type="text/javascript">
+        window.fbAsyncInit = function() {
+            FB.init({
+            appId      : '204868566792889',
+            xfbml      : true,
+            version    : 'v3.0'
+            });
+            FB.AppEvents.logPageView();
+        };
+
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/pt_BR/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+        
+    <div id='fb-root'></div>
+
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -35,6 +56,7 @@
         {% block content %}
         {% endblock %}
     </div>
+
     <script src="{% static 'js/main.js' %}"></script>
 </body>
 </html>

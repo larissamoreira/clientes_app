@@ -8,4 +8,11 @@
         <p>Seja bem vindo(a)! Faça login para visualizar os clientes.</p>
     {% endif %}
 
+
+    <!-- Botão de entrar no facebook -->
+    <fb:login-button 
+    scope="public_profile,email"
+    onlogin="checkLoginState();">
+    </fb:login-button>
+
 {% endblock %}

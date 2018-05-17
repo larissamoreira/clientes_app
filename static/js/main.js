@@ -8,6 +8,7 @@ const apikey ='FnM13uK1TWD1sleMUI7T3InJNdQ='
 if(cepinfo) {
     cepinfo.addEventListener('blur', function() {
         let cep = cepinfo.value
+        cep = cep.replace(/\.|\-/g, '');
         let url = `https://viacep.com.br/ws/${cep}/json/`
         fetch(url)
             .then(response => response.json())

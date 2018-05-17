@@ -66,8 +66,8 @@ def login(request):
             if usuario is not None:
                 auth_login(request, usuario)
                 return redirect('home')
-        else:
-            return HttpResponse('falhou')
+        # else:
+        #     return HttpResponse('falhou')
     else:
         form = login_form()
     return render(request, 'login.html', {'form':form})
