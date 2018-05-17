@@ -1,8 +1,8 @@
 Um simples CRUD :blush: utilizando:
 
-* Django
-* Bootstrap
-* API ViaCep
+* Django :heavy_check_mark:
+* Bootstrap :heavy_check_mark:
+* API ViaCep :heavy_check_mark:
 * Google Maps
 * Cadastro/Login com Facebook
 * Postgres
