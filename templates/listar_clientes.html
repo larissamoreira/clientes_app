@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Clientes</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Telefone</th>
+                    <th>Logradouro</th>
+                    <th>Bairro</th>
+                    <th>Número</th>
+                    <th>Cidade</th>
+                    <th>Estado</th>
+                    <th>País</th>
+                    <th>CEP</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cliente in clientes %}
+                    <tr>
+                        <td>{{ cliente.nome }}</td>
+                        <td>{{ cliente.telefone }}</td>
+                        <td>{{ cliente.logradouro }}</td>
+                        <td>{{ cliente.bairro }}</td>
+                        <td>{{ cliente.numero }}</td>
+                        <td>{{ cliente.cidade }}</td>
+                        <td>{{ cliente.estado }}</td>
+                        <td>{{ cliente.país }}</td>
+                        <td>{{ cliente.cep }}</td>
+                        <td><a href="{% url 'editar_cliente' cliente.id %}"class="glyphicon glyphicon-edit" style="text-decoration: none"></a></td>
+                        <td><a href="{% url 'deletar_cliente' cliente.id %}"class="glyphicon glyphicon-remove" style="text-decoration: none"></a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+{% endblock %}

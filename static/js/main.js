@@ -3,10 +3,11 @@ const logradouro = document.querySelector('#id_logradouro')
 const bairro = document.querySelector('#id_bairro')
 const cidade = document.querySelector('#id_cidade')
 const estado = document.querySelector('#id_estado')
+const apikey ='FnM13uK1TWD1sleMUI7T3InJNdQ='
 
 if(cepinfo) {
     cepinfo.addEventListener('blur', function() {
-        let cep = cepinfo.value 
+        let cep = cepinfo.value
         let url = `https://viacep.com.br/ws/${cep}/json/`
         fetch(url)
             .then(response => response.json())
