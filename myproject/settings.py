@@ -26,8 +26,7 @@ SECRET_KEY = 'qornen=ev992f^fzaxfj-a3gmibdnqy&3&)n10=@^$2)u!9(()'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.1.1','.herokuapp.com']
-
+ALLOWED_HOSTS = ['127.0.1.1','clientes-app.herokuapp.com']
 
 # Application definition
 
@@ -130,3 +129,4 @@ STATICFILES_DIRS = [
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
+django_heroku.settings(locals())
