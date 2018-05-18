@@ -6,5 +6,5 @@ Um simples CRUD :blush: utilizando:
 * CRUD :heavy_check_mark:
 * Google Maps
 * Cadastro/Login com Facebook
-* Postgres
+* Postgres :heavy_check_mark:
 * Heroku

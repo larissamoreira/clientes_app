@@ -2,15 +2,21 @@
 {% block content %}
 
 <div style="margin: auto;width: 500px;" >
-    <form method="post" role="form" class="formulario">
+    <form method="post" role="form" class="formulario" novalidate>
         {% csrf_token %}
         <h1>Cadastro</h1>
         {% for field in form %}
             <div class="form-group">
                 {{field.label_tag}}<br>
-                {{field}}
+                {{field}}<br>
+                {% if field.help_text %}
+                    <small class="form-text text-muted">
+                        {{ field.help_text|safe }}
+                    </small>
+                {% endif %}
             </div>
         {% endfor %}
+
         <button type="submit" class="btn btn-primary">Criar conta</button>
     </form>
 <div>
