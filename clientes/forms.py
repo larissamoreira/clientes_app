@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 class novo_cliente_form(forms.ModelForm):
     class Meta:
         model = Cliente
-        fields = ['nome', 'telefone', 'cep', 'logradouro', 'bairro', 'cidade', 'estado','país', 'numero']
+        fields = ['nome', 'telefone', 'cep', 'logradouro', 'bairro', 'cidade', 'estado', 'numero', 'país',]
  
 class cadastro_form(UserCreationForm):
     email = forms.EmailField(max_length=100, required=True)
