@@ -37,8 +37,12 @@ def editar_cliente(request, pk):
 
 def deletar_cliente(request, pk):
     cliente = Cliente.objects.get(pk=pk)
-    cliente.delete()
-    return redirect('listar_clientes')
+
+    if request.method == 'POST':
+        cliente.delete()
+        return redirect('listar_clientes')
+    
+    return render(request, 'cliente_delete_confirmar.html', {'cliente':cliente})
 
 def cadastro(request):
     if request.method == 'POST':
