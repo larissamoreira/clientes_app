@@ -79,18 +79,10 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get('DB_NAME', 'clientesdb'),
-        'USER': os.environ.get('DB_USER', 'larissa'),
-        'PASSWORD': os.environ.get('DB_PASS', 'larissasenha'),
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
+    'default': dj_database_url.config(
+        default=config('postgres://rsqxmykorbgbhy:41d5084532d8da0bfccf55453ecc52486e3aec7b5d1bb834a7218e8fa032fdd4@ec2-54-235-132-202.compute-1.amazonaws.com:5432/dbirur7124o2f3')
+    )
 }
-
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
