@@ -15,7 +15,7 @@ Um simples CRUD :blush:
 
 1. Faça download do postgres em: https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
 2. Abra o terminal e crie um usuário postgres com `psql -U postgres`
-3. Crie seu usuário com `CREATE USER <seu-username> PASSWORD '<sua-senha>';`
+3. Crie seu usuário com `CREATE USER <seu-username> WITH PASSWORD '<sua-senha>';`
 4. Crie o database com `CREATE DATABASE <nome-database> WITH OWNER <seu-username>;`
 5. Banco no postgres criado! Agora faça a conexão com o django em `settings.py`, para isso mude a variável `DATABASES` de acordo com o exemplo abaixo, adicionando suas informações do postgres.
 
