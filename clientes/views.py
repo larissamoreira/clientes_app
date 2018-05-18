@@ -51,7 +51,7 @@ def cadastro(request):
             auth_login(request, usuario)
             return redirect('home')
         else:
-            return redirect('cadastro')
+            return HttpResponse('O cadastro falhou, tente novamente.')
     else:
         form = cadastro_form()
     return render(request, 'cadastro.html', {'form':form})

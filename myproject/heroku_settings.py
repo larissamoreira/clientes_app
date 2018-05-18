@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -23,10 +24,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'qornen=ev992f^fzaxfj-a3gmibdnqy&3&)n10=@^$2)u!9(()'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['127.0.1.1','clientes-app.herokuapp.com']
 
 # Application definition
 
@@ -78,16 +78,10 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get('DB_NAME', 'clientesdb'),
-        'USER': os.environ.get('DB_USER', 'larissa'),
-        'PASSWORD': os.environ.get('DB_PASS', 'larissasenha'),
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
+    'default' : dj_database_url.config(
+        default='postgres://rsqxmykorbgbhy:41d5084532d8da0bfccf55453ecc52486e3aec7b5d1bb834a7218e8fa032fdd4@ec2-54-235-132-202.compute-1.amazonaws.com:5432/dbirur7124o2f3'
+    )
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
@@ -127,11 +121,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
-# STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
+# import django_heroku
+# django_heroku.settings(locals())
