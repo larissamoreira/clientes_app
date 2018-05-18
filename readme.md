@@ -19,16 +19,16 @@ Um simples CRUD :blush:
 4. Crie o database com `CREATE DATABASE <nome-database> WITH OWNER <seu-username>;`
 5. Banco no postgres criado! Agora faça a conexão com o django em `settings.py`, para isso mude a variável `DATABASES` de acordo com o exemplo abaixo, adicionando suas informações do postgres.
 
-`DATABASES = {<br />
-    'default': {<br />
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',<br />
-        'NAME': os.environ.get('DB_NAME', 'nome-database'),<br />
-        'USER': os.environ.get('DB_USER', 'seu-username'),<br />
-        'PASSWORD': os.environ.get('DB_PASS', 'sua-senha'),<br />
-        'HOST': 'localhost',<br />
-        'PORT': '5432',<br />
-    }<br />
-}`<br />
+`DATABASES = {  
+    'default': {  
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',  
+        'NAME': os.environ.get('DB_NAME', 'nome-database'),  
+        'USER': os.environ.get('DB_USER', 'seu-username'),  
+        'PASSWORD': os.environ.get('DB_PASS', 'sua-senha'),  
+        'HOST': 'localhost',  
+        'PORT': '5432',  
+    }  
+}`  
 
 6. Faça um `python manage.py makemigrations`
 7. Faça um `python manage.py migrate`
