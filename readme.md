@@ -34,7 +34,8 @@ pip install -r requirements.txt
 * Crie o database com `CREATE DATABASE <nome-database> WITH OWNER <seu-username>;`
 * Banco no postgres criado! Agora faça a conexão com o django no arquivo `settings.py` localizado no diretório myproject, para isso mude a variável `DATABASES` de acordo com o exemplo abaixo, adicionando suas informações do postgres.
 
-```DATABASES = {
+```
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': '<nome-database>',
