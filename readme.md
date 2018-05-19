@@ -46,7 +46,7 @@ DATABASES = {
     }
 }
 ```
-
+* Ainda em `settings.py`, procure a variável `DEBUG` e mude o valor False para True.
 * No diretório do projeto faça um `python manage.py makemigrations`
 * Agora faça `python manage.py migrate`
 * Para acessar o django-admin, crie um superuser com `python manage.py createsuperuser`
